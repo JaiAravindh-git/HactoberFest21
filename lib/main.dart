@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -6,59 +7,61 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Text("Member ID"),
-              SizedBox(
-                width: 50.0,
-              ),
-              Text("Member Name"),
-            ],
+      appBar: AppBar(
+        title: Text("APP BAR TITLE"),
+      ),
+      bottomNavigationBar: BottomNavyBar(
+        selectedIndex: currentIndex,
+        onItemSelected: (index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
+        items: <BottomNavyBarItem>[
+          BottomNavyBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Savings'),
+            activeColor: Colors.blueAccent,
+            inactiveColor: Colors.black,
           ),
-          DataTable(
-            columnSpacing: 4.0,
-            sortAscending: true,
-            columns: [
-              DataColumn(label: Text("Date")),
-              DataColumn(label: Text("Description")),
-              DataColumn(label: Text("Loan Amount")),
-              DataColumn(label: Text("Principal")),
-              DataColumn(label: Text("Interest")),
-              DataColumn(label: Text("Remaining")),
-            ],
-            rows: [
-              DataRow(cells: [
-                DataCell(Text("12/02/2021")),
-                DataCell(Text("Farming")),
-                DataCell(Text("20000")),
-                DataCell(Text("15000")),
-                DataCell(Text("120")),
-                DataCell(Text("60000")),
-              ]),
-              DataRow(cells: [
-                DataCell(Text("12/03/2021")),
-                DataCell(Text("Tractor")),
-                DataCell(Text("20000")),
-                DataCell(Text("15000")),
-                DataCell(Text("120")),
-                DataCell(Text("60000")),
-              ]),
-            ],
+          BottomNavyBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Savings'),
+            activeColor: Colors.blueAccent,
+            inactiveColor: Colors.black,
           ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Loan'),
+            activeColor: Colors.blueAccent,
+            inactiveColor: Colors.black,
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Profile'),
+            activeColor: Colors.blueAccent,
+            inactiveColor: Colors.black,
+          )
         ],
       ),
-    ));
+      body: Text("Women Self Help Group"),
+    );
   }
 }
