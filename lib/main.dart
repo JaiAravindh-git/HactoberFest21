@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:womenselfhelpgroup/screens/fetchData.dart';
 import 'package:womenselfhelpgroup/screens/groupselect.dart';
 import 'screens/generalledger.dart';
 import 'screens/loandetails.dart';
 import 'screens/login.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/loan': (context) => LoanDetails(),
         '/genled': (context) => GenLed(),
         '/groupselect': (context) => GroupSelect(),
+        '/fetchdata':(context) => FetchData(),
       },
       debugShowCheckedModeBanner: false,
       home: HomePage(),
@@ -31,6 +34,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+   @override
+  void initState() {
+    super.initState();
+    Firebase.initializeApp().whenComplete(() { 
+      print("completed");
+      setState(() {});
+    });
+  }
+
   int currentIndex = 0;
 
   List listOfPages = [
