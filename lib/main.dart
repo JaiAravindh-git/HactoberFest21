@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:womenselfhelpgroup/screens/adddata.dart';
 import 'package:womenselfhelpgroup/screens/fetchData.dart';
 import 'package:womenselfhelpgroup/screens/groupselect.dart';
 import 'screens/generalledger.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         '/genled': (context) => GenLed(),
         '/groupselect': (context) => GroupSelect(),
         '/fetchdata':(context) => FetchData(),
+        '/addData': (context) => AddData(),
       },
       debugShowCheckedModeBanner: false,
       home: HomePage(),
