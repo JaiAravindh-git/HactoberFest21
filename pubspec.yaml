@@ -29,7 +29,9 @@ dependencies:
   device_info: ^2.0.0
   firebase_auth: ^1.0.1
   firebase_core: ^1.0.1
+  flutter_local_notifications: ^5.0.0
   material_floating_search_bar: ^0.3.0
+  rxdart: ^0.26.0
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +50,13 @@ flutter:
     - images/logo.png
     - images/1.png
     - images/2.png
+    - images/3.png
+    - images/4.png
+    - images/5.png
+    - images/6.png
+    - images/7.png
+    - images/8.png
+    - images/9.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
