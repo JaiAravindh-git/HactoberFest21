@@ -8,6 +8,7 @@ import 'package:womenselfhelpgroup/screens/fetchData.dart';
 import 'package:womenselfhelpgroup/screens/fetchdata2.dart';
 import 'package:womenselfhelpgroup/screens/groupselect.dart';
 import 'package:womenselfhelpgroup/screens/loginpage.dart';
+import 'package:womenselfhelpgroup/screens/payment.dart';
 import 'package:womenselfhelpgroup/screens/signup.dart';
 import 'screens/generalledger.dart';
 import 'screens/loandetails.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/addData': (context) => AddData(),
         '/addData2' : (context) =>AddData2(),
         '/signup' : (context) => SignUpPage(),
+       // '/payment': (context) => PayementPage(),
       },
       debugShowCheckedModeBanner: false,
       home: HomePage(),
@@ -55,6 +57,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+
     Firebase.initializeApp().whenComplete(() { 
       print("completed");
       setState(() {});
@@ -66,7 +69,7 @@ class _HomePageState extends State<HomePage> {
   List listOfPages = [
     LoanDetails(),
     GenLed(),
-    Text("Loan")
+    PayementPage(),
   ];
 
   @override
