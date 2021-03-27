@@ -14,8 +14,11 @@ class WelcomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.menu_sharp),
-                  Icon(Icons.help_outline_rounded),
+                  ElevatedButton(onPressed: (){
+                    Navigator.pushNamed(context, '/listings');
+                  }, child: Icon(Icons.list_alt),),
+                  
+                  
                 ],
               ),
             ),

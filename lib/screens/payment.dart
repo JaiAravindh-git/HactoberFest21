@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:toast/toast.dart';
 
@@ -78,20 +79,41 @@ class _PayementPageState extends State<PayementPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Razor Pay")),
-      body: Column(
-        children: [
-          TextField(
-            controller: textEditingController,
-            decoration: InputDecoration(
-              hintText: "amount to pay",
+      
+      body: SafeArea(
+              child: Column(
+          children: [
+           
+            Container(
+              height: 400.0,
+              width: 400.0,
+              child: Image.asset('images/10.png')
+              ),
+               Padding(
+              padding: const EdgeInsets.fromLTRB(20,30,0,50),
+              child: Text("ஆன்லைனில் பணம் செலுத்துங்கள்", style: TextStyle(fontSize : 30.0),),
             ),
-          ),
-          SizedBox(height: 12.0,),
-          ElevatedButton(onPressed: (){
-            openCheckout();           
-          }, child: Text("Pay Now"))
-        ],
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20,0,20,0),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                controller: textEditingController,
+                decoration: InputDecoration(
+                  hintText: "செலுத்த வேண்டிய தொகை",
+                  prefixIcon: Icon(Icons.payment_outlined,),
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+            SizedBox(height: 12.0,),
+            ElevatedButton(onPressed: (){
+              openCheckout();           
+            }, child: Text("பணம் செலுத்துங்கள்"),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.green
+            )),
+          ],
+        ),
       ),
       
     );

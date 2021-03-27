@@ -7,6 +7,7 @@ import 'package:womenselfhelpgroup/screens/addloandata.dart';
 import 'package:womenselfhelpgroup/screens/fetchData.dart';
 import 'package:womenselfhelpgroup/screens/fetchdata2.dart';
 import 'package:womenselfhelpgroup/screens/groupselect.dart';
+import 'package:womenselfhelpgroup/screens/listingsPage.dart';
 import 'package:womenselfhelpgroup/screens/loginpage.dart';
 import 'package:womenselfhelpgroup/screens/payment.dart';
 import 'package:womenselfhelpgroup/screens/signup.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         '/addData': (context) => AddData(),
         '/addData2' : (context) =>AddData2(),
         '/signup' : (context) => SignUpPage(),
-       // '/payment': (context) => PayementPage(),
+        '/listings': (context) => ListingsPage(),
       },
       debugShowCheckedModeBanner: false,
       home: HomePage(),
@@ -99,13 +100,13 @@ class _HomePageState extends State<HomePage> {
               'சேமிப்பு',
               style: TextStyle(color: Colors.black),
             ),
-            activeColor: Colors.green,
+            activeColor: Colors.blue,
             inactiveColor: Colors.black,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.payment_rounded),
             title: Text(
-              'payement',
+              'கட்டணம்',
               style: TextStyle(color: Colors.black),
             ),
             activeColor: Colors.green,
